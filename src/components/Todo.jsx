@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
-import './css/Todo.css'
+import React, { useState } from 'react';
+import './css/Todo.css';
+import trashBin from '../assets/gif/trash-bin.gif';
+import pencil from '../assets/gif/pencil.gif';
 
 
 function Todo() {
@@ -49,8 +51,8 @@ function Todo() {
                         {editIndex === index ? 
                             <button className='done-btn' onClick={()=>setEditIndex(null)}>Done</button> : 
                             <div className="edit-container">
-                                <button onClick={()=>setEditIndex(index)}>Edit</button>
-                                <button onClick={()=>deleteItem(index)}>Delete</button>
+                                <button onClick={()=>setEditIndex(index)}><img className='pencilgif' src={pencil} alt='edit'></img></button>
+                                <button onClick={()=>deleteItem(index)}><img className='bingif' src={trashBin} alt='delete'></img></button>
                             </div>
                         }
                     </div>
